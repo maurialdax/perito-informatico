@@ -1,0 +1,4 @@
+node_modules/
+.env
+npm-debug.log*
+# forensics.db NO se ignora: es parte de la entrega

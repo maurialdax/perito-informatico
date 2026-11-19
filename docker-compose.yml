@@ -1,0 +1,18 @@
+# Contenedor de PostgreSQL para producción.
+# Los valores coinciden con los de .env.example
+services:
+  postgres:
+    image: postgres:16
+    container_name: forensics_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: forensics
+      POSTGRES_USER: forensics_user
+      POSTGRES_PASSWORD: forensics_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - forensics_pgdata:/var/lib/postgresql/data
+
+volumes:
+  forensics_pgdata:
